@@ -8,7 +8,7 @@ const OAuth = require('wechat-oauth-middleware');
 const oauthMidware = (options) => {
   const oauth = OAuth(options);
   return oauth.forward(oauth.koa);
-}
+};
 // thinkjs 风格的中间件 ]]
 
 module.exports = [
@@ -16,8 +16,8 @@ module.exports = [
     // 使用中间件
     handle: oauthMidware,
     options: {
-      appId: 'wx74205b421dc1f3eb',
-      appSecret: '227dcfc1bb8a9e1b371ed15c981e5c8d',
+      appId: 'wx4f33bb08e679e5c7',
+      appSecret: '927f58b7cb2f13e1c7a30d2c220bbba1',
       scope: OAuth.SCOPE_USER_INFO
     },
     match: '/auth' // 使用方式：前端页面使用 location.href = 'http://thinkjs服务器:端口号/auth?referer=' + encodeURIComponent(location.href)
@@ -26,7 +26,7 @@ module.exports = [
   {
     handle: 'meta',
     options: {
-      logRequest: isDev,
+      logRequest: true,
       sendResponseTime: isDev
     }
   },
